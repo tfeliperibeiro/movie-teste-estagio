@@ -7,9 +7,12 @@ const ListFilms = ({ title, items }) => (
   <div className="movie">
     <h2>{title}</h2>
     <div className="list-area">
-      <div className="list">
+      <div
+        className="list"
+        style={{ width: items.results.length * 150 }}
+      >
         {items && items.results
-        // Filtrando por que uma imagem está quebrada na API
+          // Filtrando por que uma imagem está quebrada na API
           .filter((value) => value.original_title !== 'Your Name')
           .map((value) => (
             <div key={value.id} className="item">

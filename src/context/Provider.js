@@ -7,11 +7,13 @@ const Provider = ({ children }) => {
   const [films, setFilms] = useState(null);
   const [featuredMovie, setFeaturedMovie] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [headerColor, setHeaderColor] = useState(false);
 
   useEffect(async () => {
     const listFilms = await Data.getListFilms();
     setFilms(listFilms);
 
+    // Logica para gerar a capa do filme aleatoria
     const movieGenre = listFilms.filter((movie) => movie.title === 'Ação');
     const moviePath = movieGenre.filter((movie) => movie.backdrop_path !== null);
     const randomMovie = Math.floor(Math.random() * (moviePath[0].items.results.length - 1));
@@ -27,10 +29,26 @@ const Provider = ({ children }) => {
     }
   }, [films]);
 
+  useEffect(() => {
+    const scroll = () => {
+      if (window.scrollY > 100) {
+        setHeaderColor(true);
+      } else {
+        setHeaderColor(false);
+      }
+    };
+
+    window.addEventListener('scroll', scroll);
+    return () => {
+      window.removeEventListener('scroll', scroll);
+    };
+  }, []);
+
   const INITIAL_VALUE = {
     films,
     featuredMovie,
     loading,
+    headerColor,
   };
 
   return (
