@@ -8,17 +8,18 @@ const Home = () => {
   const { films, featuredMovie, loading } = useContext(Context);
   return (
     <main>
-      {loading ? <Loading /> : null }
+      {loading ? <Loading /> : null}
       {featuredMovie && <FeaturedMovie item={featuredMovie} />}
-      <div className="page">
-        <section className="lists">
-          {films && films.map((values) => (
-            <ListFilms
-              key={values.title}
-              title={values.title}
-              items={values.items}
-            />
-          ))}
+      <div className='page'>
+        <section className='lists'>
+          {films &&
+            films.map((values) => (
+              <ListFilms
+                key={values.title}
+                title={values.title}
+                items={values.items}
+              />
+            ))}
         </section>
       </div>
     </main>

@@ -1,11 +1,11 @@
-import { CircularProgress } from '@material-ui/core';
-import React from 'react';
+import { CircularProgress } from "@material-ui/core";
+import React from "react";
 
-import './Loading.css';
+import "./Loading.css";
 
 const Loading = () => (
   <>
-    <div className="loading">
+    <div className='loading'>
       <CircularProgress size={50} />
     </div>
   </>

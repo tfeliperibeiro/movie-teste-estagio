@@ -1,20 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import './FeaturedMovie.css';
+import "./FeaturedMovie.css";
+import SearchMovie from "../SearchMovie";
 
 const FeaturedMovie = ({ item }) => (
   <>
+    <SearchMovie />
     <section
-      className="featured"
+      className='featured'
       style={{
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`,
-        opacity: '0.3',
+        opacity: "0.3",
       }}
     >
-      <div className="featured-vertical" />
+      <div className='featured-vertical' />
     </section>
   </>
 );
