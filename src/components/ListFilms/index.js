@@ -1,6 +1,7 @@
 import React from 'react';
-import '../css/ListFilms.css';
 import PropTypes from 'prop-types';
+
+import './ListFilms.css';
 
 const ListFilms = ({ title, items }) => (
   <div className="movie">

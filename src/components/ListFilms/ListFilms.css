@@ -26,3 +26,7 @@
 .item img:hover {
   transform: scale(1);
 }
+
+.page {
+  margin-top: -150px;
+}

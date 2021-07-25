@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
-import ListFilms from '../components/ListFilms';
-import Context from '../context/Context';
+import FeaturedMovie from '../../components/FeaturedMovie';
+import ListFilms from '../../components/ListFilms';
+import Context from '../../context/Context';
+import Loading from '../../components/Loading';
 
 const Home = () => {
-  const { films } = useContext(Context);
+  const { films, featuredMovie, loading } = useContext(Context);
   return (
     <main>
+      {loading ? <Loading /> : null }
+      {featuredMovie && <FeaturedMovie item={featuredMovie} />}
       <div className="page">
         <section className="lists">
           {films && films.map((values) => (

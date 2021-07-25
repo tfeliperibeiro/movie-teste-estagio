@@ -15,3 +15,7 @@ body {
   color: var(--text);
   background-color: var(--background);
 }
+
+input {
+  color: var(--text);
+}
