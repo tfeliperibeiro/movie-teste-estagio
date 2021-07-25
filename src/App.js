@@ -1,8 +1,13 @@
 import React from 'react';
 import './App.css';
+import Provider from './context/Provider';
 
 function App() {
-  return <h2>Ola</h2>;
+  return (
+    <Provider>
+      <p>Ola</p>
+    </Provider>
+  );
 }
 
 export default App;
