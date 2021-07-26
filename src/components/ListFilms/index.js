@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./ListFilms.css";
+import { Link } from "react-router-dom";
 
 const ListFilms = ({ title, items }) => (
   <div className='movie'>
@@ -13,12 +14,12 @@ const ListFilms = ({ title, items }) => (
             // Filtrando por que uma imagem está quebrada na API
             .filter((value) => value.original_title !== "Your Name")
             .map((value) => (
-              <div key={value.id} className='item'>
+              <Link to={`/details/${value.id}`} key={value.id} className='item'>
                 <img
                   src={`https://image.tmdb.org/t/p/w300${value.poster_path}`}
                   alt={value.original_title}
                 />
-              </div>
+              </Link>
             ))}
       </div>
     </div>

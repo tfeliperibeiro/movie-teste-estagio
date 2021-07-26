@@ -1,10 +1,10 @@
-import React from 'react';
-import './App.css';
-import { Switch, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Provider from './context/Provider';
-import Home from './pages/Home';
-import Details from './components/Details';
+import React from "react";
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Provider from "./context/Provider";
+import Home from "./pages/Home";
+import Details from "./components/Details";
 
 function App() {
   return (

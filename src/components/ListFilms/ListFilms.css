@@ -24,7 +24,7 @@
 .page {
   margin-top: -150px;
 }
-.next-list, 
+.next-list,
 .before-list {
   position: absolute;
   border: none;
@@ -37,7 +37,7 @@
   overflow: hidden;
   background-color: rgba(2, 13, 24);
   opacity: 0.6;
-  color: #FFF;
+  color: #fff;
 }
 .next-list {
   right: 0;
