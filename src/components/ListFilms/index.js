@@ -14,7 +14,11 @@ const ListFilms = ({ title, items }) => (
             // Filtrando por que uma imagem está quebrada na API
             .filter((value) => value.original_title !== "Your Name")
             .map((value) => (
-              <Link to={`/details/${value.id}`} key={value.id} className='item'>
+              <Link
+                to={`/details/${value.id}/${title}`}
+                key={value.id}
+                className='item'
+              >
                 <img
                   src={`https://image.tmdb.org/t/p/w300${value.poster_path}`}
                   alt={value.original_title}
