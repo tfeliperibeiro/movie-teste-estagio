@@ -1,0 +1,44 @@
+.details-movie {
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.details-movie img {
+  margin-bottom: 20px;
+}
+
+.btn-link {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.btn-link button {
+  margin-top: 50px;
+  border: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 22px;
+  cursor: pointer;
+  background-color: rgba(221, 26, 63);
+  color: #f2f2f2;
+}
+
+.btn-link h2 {
+  margin-bottom: 10px;
+}
+
+.btn-link button:hover {
+  background-color: rgb(180, 12, 43);
+  transition: all ease 0.2s;
+}

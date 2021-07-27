@@ -1,6 +1,6 @@
 :root {
   --button: rgba(221, 26, 63);
-  --text: #FFF;
+  --text: #fff;
   --background: rgba(2, 13, 24);
 }
 
@@ -18,4 +18,9 @@ body {
 
 input {
   color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
 }

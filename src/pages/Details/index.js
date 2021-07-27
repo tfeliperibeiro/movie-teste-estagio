@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Context from "../../context/Context";
 import Loading from "../../components/Loading";
+import "./Details.css";
 
 const Details = ({
   match: {
@@ -45,13 +46,24 @@ const Details = ({
               >
                 <div className='featured-vertical' />
               </section>
-              <div>
+              <div className='details-movie'>
                 <img
                   alt={title}
                   src={`https://image.tmdb.org/t/p/w300${poster_path}`}
                 />
-                <h2>{title}</h2>
-                <p>{overview}</p>
+                <div className='btn-link'>
+                  <h2>{title}</h2>
+                  <p>{overview}</p>
+                  <a
+                    target='_blank'
+                    rel='noreferrer'
+                    href={`https://www.youtube.com/results?search_query=${title}`}
+                  >
+                    <button type='button' className='btn-trailer'>
+                      Ver trailer
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
           )
