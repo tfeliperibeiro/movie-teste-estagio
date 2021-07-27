@@ -36,3 +36,9 @@
 .text-info {
   color: rgba(221, 26, 63);
 }
+
+@media (max-width: 653px) and (min-width: 320px) {
+  .container-input {
+    width: 80%;
+  }
+}

@@ -60,3 +60,18 @@
 .stars p {
   font-weight: 700;
 }
+
+@media (max-width: 653px) and (min-width: 320px) {
+  .details-movie {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .text-details {
+    max-width: 80%;
+  }
+
+  .text-details button {
+    margin-bottom: 50px;
+  }
+}
