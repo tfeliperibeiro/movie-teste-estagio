@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Context from "../../context/Context";
 import Loading from "../../components/Loading";
+import StarIcon from "@material-ui/icons/Star";
 import "./Details.css";
 
 const Details = ({
@@ -33,7 +34,14 @@ const Details = ({
         <Loading />
       ) : (
         filmDetail.map(
-          ({ title, id, overview, backdrop_path, poster_path }) => (
+          ({
+            title,
+            id,
+            overview,
+            backdrop_path,
+            poster_path,
+            vote_average,
+          }) => (
             <div className='container-details' key={id}>
               <section
                 className='featured'
@@ -51,9 +59,13 @@ const Details = ({
                   alt={title}
                   src={`https://image.tmdb.org/t/p/w300${poster_path}`}
                 />
-                <div className='btn-link'>
+                <div className='text-details'>
                   <h2>{title}</h2>
                   <p>{overview}</p>
+                  <section className='stars'>
+                    <StarIcon htmlColor='#ffcb0c' />
+                    <p className='vote'>{vote_average}</p>
+                  </section>
                   <a
                     target='_blank'
                     rel='noreferrer'

@@ -12,17 +12,15 @@
   margin-bottom: 20px;
 }
 
-.btn-link {
+.text-details {
   max-width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
 }
 
-.btn-link button {
-  margin-top: 50px;
+.text-details button {
   border: none;
   width: 200px;
   height: 50px;
@@ -32,13 +30,33 @@
   cursor: pointer;
   background-color: rgba(221, 26, 63);
   color: #f2f2f2;
+  margin-top: 30px;
 }
 
-.btn-link h2 {
+.text-details h2 {
   margin-bottom: 10px;
 }
 
-.btn-link button:hover {
+.text-details p {
+  text-align: center;
+}
+
+.text-details button:hover {
   background-color: rgb(180, 12, 43);
   transition: all ease 0.2s;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.vote {
+  margin-left: 10px;
+}
+
+.stars p {
+  font-weight: 700;
 }
