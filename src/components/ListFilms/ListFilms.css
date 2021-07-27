@@ -1,0 +1,47 @@
+.movie {
+  margin-bottom: 30px;
+}
+.movie h2 {
+  margin: 0px 0px 0px 30px;
+}
+.list-area {
+  overflow-x: hidden;
+  padding-left: 30px;
+}
+.item {
+  display: inline-block;
+  width: 150px;
+  cursor: pointer;
+}
+.item img {
+  width: 100%;
+  transform: scale(0.9);
+  transition: all ease 0.2s;
+}
+.item img:hover {
+  transform: scale(1);
+}
+.page {
+  margin-top: -150px;
+}
+.next-list,
+.before-list {
+  position: absolute;
+  border: none;
+  width: 40px;
+  height: 225px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: rgba(2, 13, 24);
+  opacity: 0.6;
+  color: #fff;
+}
+.next-list {
+  right: 0;
+}
+.before-list {
+  left: 0;
+}

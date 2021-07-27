@@ -1,5 +1,26 @@
+:root {
+  --button: rgba(221, 26, 63);
+  --text: #fff;
+  --background: rgba(2, 13, 24);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+input {
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
 }
