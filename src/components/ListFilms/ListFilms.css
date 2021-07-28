@@ -68,4 +68,8 @@
   .movie-listarea {
     overflow-x: scroll;
   }
+  .btn-left,
+  .btn-right {
+    display: none;
+  }
 }

@@ -10,6 +10,7 @@ const Details = ({
   },
 }) => {
   const { films } = useContext(Context);
+
   const [filmDetail, setFilmDetail] = useState(null);
 
   useEffect(() => {
