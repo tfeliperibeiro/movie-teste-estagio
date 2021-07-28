@@ -7,6 +7,8 @@ const Provider = ({ children }) => {
   const [featuredMovie, setFeaturedMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [headerColor, setHeaderColor] = useState(false);
+  const [searchMovie, setSearchMovie] = useState("");
+  const [inputChange, setInputChange] = useState(false);
 
   useEffect(() => {
     const getFilms = async () => {
@@ -50,11 +52,24 @@ const Provider = ({ children }) => {
     };
   }, []);
 
+  const handleSearchMovie = ({ target }) => {
+    let timer = null;
+    clearTimeout(timer);
+    setInputChange(true);
+    timer = setTimeout(() => {
+      setSearchMovie(target.value.toLowerCase());
+      setInputChange(false);
+    }, 2000);
+  };
+
   const INITIAL_VALUE = {
     films,
     featuredMovie,
     loading,
     headerColor,
+    handleSearchMovie,
+    searchMovie,
+    inputChange,
   };
 
   return <Context.Provider value={INITIAL_VALUE}>{children}</Context.Provider>;

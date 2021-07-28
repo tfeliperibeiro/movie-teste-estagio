@@ -1,47 +1,71 @@
 .movie {
   margin-bottom: 30px;
 }
+
 .movie h2 {
   margin: 0px 0px 0px 30px;
 }
-.list-area {
+
+.movie-listarea {
   overflow-x: hidden;
   padding-left: 30px;
 }
-.item {
+
+.movie-list {
+  transition: all ease 0.2s;
+}
+
+.movie-item {
   display: inline-block;
   width: 150px;
   cursor: pointer;
 }
-.item img {
+
+.movie-item img {
   width: 100%;
   transform: scale(0.9);
   transition: all ease 0.2s;
 }
-.item img:hover {
+
+.movie-item img:hover {
   transform: scale(1);
 }
-.page {
-  margin-top: -150px;
-}
-.next-list,
-.before-list {
+
+.btn-left,
+.btn-right {
   position: absolute;
-  border: none;
   width: 40px;
   height: 225px;
-  z-index: 1;
+  background-color: rgba(2, 13, 24, 0.7);
+  z-index: 99;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  justify-content: center;
   overflow: hidden;
-  background-color: rgba(2, 13, 24);
-  opacity: 0.6;
-  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: all ease 0.2s;
 }
-.next-list {
+
+.btn-left {
+  left: 0;
+}
+
+.btn-right {
   right: 0;
 }
-.before-list {
-  left: 0;
+
+.movie:hover .btn-left,
+.movie:hover .btn-right {
+  opacity: 1;
+}
+
+.lists {
+  margin-top: -150px;
+}
+
+@media (max-width: 653px) and (min-width: 320px) {
+  .movie-listarea {
+    overflow-x: scroll;
+  }
 }

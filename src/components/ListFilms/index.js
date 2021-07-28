@@ -1,34 +1,78 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 
 import "./ListFilms.css";
 import { Link } from "react-router-dom";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import Context from "../../context/Context";
 
-const ListFilms = ({ title, items }) => (
-  <div className='movie'>
-    <h2>{title}</h2>
-    <div className='list-area'>
-      <div className='list' style={{ width: items.results.length * 150 }}>
-        {items &&
-          items.results
-            // Filtrando por que uma imagem está quebrada na API
-            .filter((value) => value.original_title !== "Your Name")
-            .map((value) => (
-              <Link
-                to={`/details/${value.id}/${title}`}
-                key={value.id}
-                className='item'
-              >
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${value.poster_path}`}
-                  alt={value.original_title}
-                />
-              </Link>
-            ))}
+const imageSize = 150;
+
+const ListFilms = ({ title, items }) => {
+  const { searchMovie } = useContext(Context);
+  const [scrollX, setScrollX] = useState(0);
+
+  const handleNextButton = () => {
+    let positionX = scrollX + Math.round(window.innerWidth / 2);
+    if (positionX > 0) {
+      positionX = 0;
+    }
+    setScrollX(positionX);
+  };
+
+  const handleBeforeButton = () => {
+    let positionX = scrollX - Math.round(window.innerWidth / 2);
+    let listW = items.results.length * 150;
+    if (window.innerWidth - listW > positionX) {
+      positionX = window.innerWidth - listW - 60;
+    }
+    setScrollX(positionX);
+  };
+
+  return (
+    <div className='movie'>
+      <h2>{title}</h2>
+      <div className='btn-left' onClick={handleNextButton}>
+        <NavigateBeforeIcon style={{ fontSize: 50 }} />
+      </div>
+      <div className='btn-right' onClick={handleBeforeButton}>
+        <NavigateNextIcon style={{ fontSize: 50 }} />
+      </div>
+
+      <div className='movie-listarea'>
+        <div
+          className='movie-list'
+          style={{
+            marginLeft: scrollX,
+            width: items.results.length * imageSize,
+          }}
+        >
+          {items &&
+            items.results
+              .filter((value) =>
+                value.title.toLowerCase().startsWith(searchMovie)
+              )
+              .filter((value) => value.original_title !== "Your Name")
+              .map((value) => (
+                <div key={value.id} className='movie-item'>
+                  <Link
+                    to={`/details/${value.id}/${title}`}
+                    key={value.id}
+                    className='item'
+                  >
+                    <img
+                      src={`https://image.tmdb.org/t/p/w300${value.poster_path}`}
+                      alt={value.original_title}
+                    />
+                  </Link>
+                </div>
+              ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 ListFilms.propTypes = {
   items: PropTypes.shape({
