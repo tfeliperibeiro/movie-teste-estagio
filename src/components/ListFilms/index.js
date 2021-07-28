@@ -52,7 +52,7 @@ const ListFilms = ({ title, items }) => {
           {items &&
             items.results
               .filter((value) =>
-                value.title.toLowerCase().startsWith(searchMovie)
+                value.title.toLowerCase().includes(searchMovie)
               )
               .filter((value) => value.original_title !== "Your Name")
               .map((value) => (
