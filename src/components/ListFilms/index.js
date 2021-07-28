@@ -1,16 +1,17 @@
 import React, { useContext, useState } from "react";
-import PropTypes from "prop-types";
-
+import Context from "../../context/Context";
 import "./ListFilms.css";
+
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
-import Context from "../../context/Context";
 
 const imageSize = 150;
 
 const ListFilms = ({ title, items }) => {
   const { searchMovie } = useContext(Context);
+
   const [scrollX, setScrollX] = useState(0);
 
   const handleNextButton = () => {
@@ -23,9 +24,9 @@ const ListFilms = ({ title, items }) => {
 
   const handleBeforeButton = () => {
     let positionX = scrollX - Math.round(window.innerWidth / 2);
-    let listW = items.results.length * 150;
-    if (window.innerWidth - listW > positionX) {
-      positionX = window.innerWidth - listW - 60;
+    let positionW = items.results.length * 150;
+    if (window.innerWidth - positionW > positionX) {
+      positionX = window.innerWidth - positionW - 60;
     }
     setScrollX(positionX);
   };
